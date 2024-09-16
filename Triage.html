@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - Patient Data </title>
+    <link rel="stylesheet" href="Pstyle.css">
+    
+</head>
+<body>
+
+    <h1>Health Monitoring System</h1>
+
+    <!-- Patient Data Form -->
+    <form id="patientForm">
+        <h2>Enter Patient Data</h2>
+
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" placeholder="Enter patient name" required>
+
+        <label for="patientAge">Age:</label>
+        <input type="number" id="patientAge" placeholder="Enter patient age" required>
+
+        <label for="patientTemperature">Temperature (°C):</label>
+        <input type="number" id="patientTemperature" step="0.1" placeholder="Enter temperature" required>
+
+        <label for="patientVitals">Vitals (Heart Rate, BP, etc.):</label>
+        <input type="text" id="patientVitals" placeholder="Enter vitals" required>
+
+        <label for="emergency">Emergency Contact:</label>
+        <input type="text" id="emergency" placeholder="Enter emergency contact" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Doctor Allocation Section -->
+    <div id="doctorSection" class="hidden">
+        <h2>Doctor Allocation</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Temperature</th>
+                    <th>Vitals</th>
+                    <th>Emergency Contact</th>
+                </tr>
+            </thead>
+            <tbody id="patientInfo"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('patientForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting traditionally
+
+            // Collect the form data
+            const patientName = document.getElementById('patientName').value;
+            const patientAge = document.getElementById('patientAge').value;
+            const patientTemperature = document.getElementById('patientTemperature').value;
+            const patientVitals = document.getElementById('patientVitals').value;
+            const emergency = document.getElementById('emergency').value;
+
+            // Create a patient data object
+            const patientData = {
+                name: patientName,
+                age: patientAge,
+                temperature: patientTemperature,
+                vitals: patientVitals,
+                emergency: emergency
+            };
+
+            // Get previously stored data or initialize as empty array
+            const storedPatients = JSON.parse(localStorage.getItem('patients')) || [];
+
+            // Add new patient data to the list
+            storedPatients.push(patientData);
+
+            // Save updated patient data back to localStorage
+            localStorage.setItem('patients', JSON.stringify(storedPatients));
+
+            // Show the doctor section if hidden
+            document.getElementById('doctorSection').classList.remove('hidden');
+
+            // Clear form inputs
+            document.getElementById('patientForm').reset();
+
+            // Update the patient info table
+            displayPatientData();
+        });
+
+        // Function to display patient data in the table
+        function displayPatientData() {
+            const patientInfoTbody = document.getElementById('patientInfo');
+            patientInfoTbody.innerHTML = ''; // Clear previous data
+
+            // Get stored patient data from localStorage
+            const storedPatients = JSON.parse(localStorage.getItem('patients')) || [];
+
+            // Display each patient's data in the table
+            storedPatients.forEach(function(patient) {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${patient.name}</td>
+                    <td>${patient.age}</td>
+                    <td>${patient.temperature} °C</td>
+                    <td>${patient.vitals}</td>
+                    <td>${patient.emergency}</td>
+                `;
+                patientInfoTbody.appendChild(newRow);
+            });
+        }
+
+        // Check if there's already patient data in localStorage and display it
+        if (localStorage.getItem('patients')) {
+            document.getElementById('doctorSection').classList.remove('hidden');
+            displayPatientData();
+        }
+    </script>
+
+</body>
+</html>

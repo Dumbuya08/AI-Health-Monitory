@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Health Monitoring App</title>
+<script src="frontend.js"></script>
+<script src="backend.js"></script>
+<script src="backup.json"></script>
+<script src="search.js"></script>
+<script src="searchback.js"></script>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search the web...">
+    <button onclick="performSearch()">Search</button>
+
+    <div class="results" id="results"></div>
+  <div class="app-container">
+    <!-- Top Header Section -->
+    <header class="header">
+      <h1>Health Monitoring</h1>
+      <input type="text" placeholder="Search Patients" id="searchBar">
+    </header>
+    
+    <!-- Chat List Section (like WhatsApp chat section) -->
+    <section class="data-list" id="dataList">
+      <!-- List of patient data will be displayed here dynamically -->
+    </section>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <ul> 
+        <li><a href="Triage.html" class="nav-link">Triage</a></li>
+        <li><a href="Options.html" class="nav-link">Options</a></li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+
+  <!-- JavaScript file -->
+  <script src="app.js"></script>
+</body>
+</html>

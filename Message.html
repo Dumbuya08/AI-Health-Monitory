@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Health Monitoring - Chat</title>
+  <link rel="stylesheet" href="chstyle.css">
+  <script src="Cback.js"></script>
+  <script src="jchat.js"></script>
+  <script src="chatbot.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Chat with Doctors and Nurses</h1>
+      <div class="status-indicator">
+        <span class="status-dot online"></span> Online
+      </div>
+    </header>
+
+    <!-- Chat Messages -->
+    <div class="chat-box" id="chatBox">
+      <!-- Messages will be dynamically added here -->
+    </div>
+
+    <!-- Message Input Area -->
+    <div class="chat-input">
+      <button id="emojiBtn">😊</button>
+      <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off">
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Emoji Picker (Initially Hidden) -->
+  <div id="emojiPicker" class="emoji-picker hidden">
+    <div class="emoji-row">
+      😊 😍 😂 😢 🤔 😡 😭 😎 🥳
+    </div>
+    <div class="emoji-row">
+      ❤️ 👍 👎 🙌 👏 💪 🔥 💯 💡
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

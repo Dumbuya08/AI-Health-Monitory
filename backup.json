@@ -1,0 +1,17 @@
+q{
+    "patients": [
+      {
+        "name": "John Doe",
+        "age": 45,
+        "healthCondition": "Diabetes",
+        "lastVisit": "2024-09-01"
+      },
+      {
+        "name": "Jane Smith",
+        "age": 30,
+        "healthCondition": "Hypertension",
+        "lastVisit": "2024-08-25"
+      }
+    ]
+  }
+  

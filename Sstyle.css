@@ -1,0 +1,63 @@
+/* Default (Light Theme) */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul li {
+  margin: 0 1em;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul li button {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+}
+
+section {
+  padding: 2em;
+}
+
+.dark-theme {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.dark-theme header {
+  background-color: #222;
+}
+
+.dark-theme header nav ul li button {
+  border: 1px solid #f4f4f4;
+}
+
+.dark-theme footer {
+  background-color: #222;
+}

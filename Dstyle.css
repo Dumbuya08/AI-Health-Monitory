@@ -1,0 +1,98 @@
+/* General body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Container for main content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Success/Error message styling */
+#responseMessage {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#responseMessage.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#responseMessage.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Custom select box */
+select {
+  appearance: none;
+  background: url('data:image/svg+xml;base64,<svg...>') no-repeat right #fff;
+  background-size: 1em;
+  padding-right: 2em;
+}
+
+/* Ensure the form takes the full width on smaller devices */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+}

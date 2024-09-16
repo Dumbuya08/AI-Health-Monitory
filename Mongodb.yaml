@@ -1,0 +1,13 @@
+Firestore Database
+    └── patients
+        ├── patientID1
+            ├── name: "John Doe"
+            ├── age: 45
+            ├── healthCondition: "Diabetes"
+            ├── lastVisit: "2024-09-01"
+        ├── patientID2
+            ├── name: "Jane Smith"
+            ├── age: 30
+            ├── healthCondition: "Hypertension"
+            ├── lastVisit: "2024-08-25"
+            
